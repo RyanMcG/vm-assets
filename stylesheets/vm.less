@@ -11,18 +11,14 @@ html {
 }
 
 body {
-  .dark-colors();
-  line-height: 1.4em;
-  font-size: 14pt;
-  font-weight: 400;
+  .dark-colors(darken(@color, 10%));
 }
 
 .dark-elements();
 
 html, button, input, select, textarea,
-.pure-g [class *= "pure-u"],
-.pure-g-r [class *= "pure-u"] {
-  font-family: @sans-serif;
+.pure-g [class *= "pure-u"] {
+  font: @font;
 }
 
 #content {
@@ -35,37 +31,6 @@ html, button, input, select, textarea,
 h1, h2, h3, h4 ,h5, h6, .tag-line, footer {
   font-family: @serif;
   font-weight: 300;
-}
-
-.content() {
-  max-width: @page-max-width;
-  margin: 0 auto;
-}
-
-.pad-content() {
-  & > {
-    p, h1, h2, h3, h4, h5, h6, blockquote {
-      margin-left: @content-padding;
-      margin-right: @content-padding;
-    }
-
-    blockquote {
-      @vertical-spacing: .5em;
-      margin-top: @vertical-spacing;
-      margin-bottom: @vertical-spacing;
-      padding: @vertical-spacing @content-padding;
-      font-size: 1.1em;
-      font-family: @serif;
-      font-weight: 100;
-
-      border-left: 4px solid darken(@bg-color, 15%);
-
-      p {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
-  }
 }
 
 header, footer, article {
@@ -86,7 +51,17 @@ header {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1em;
+}
+h1, h2 {
   margin: 2em 0 .666em;
+}
+
+h3, h4 {
+  margin: 1.2em 0 .6em;
+}
+
+h5, h6 {
+  margin: 1em 0 .3em;
 }
 
 img {
@@ -128,7 +103,7 @@ hr {
   border: 0;
   height: 1px;
   background-color: lighten(@color, 76%);
-  margin: 3em 0;
+  margin: 2em 0 1.75em;
 }
 
 p {
@@ -151,9 +126,9 @@ article {
 
   @pre-padding: .4em;
   & > pre {
-    border-radius: 2px;
+    border-radius: 3px;
     box-shadow: inset 0 0 (2 * @pre-padding) rgba(15, 15, 15, .87), 0 0 @pre-padding rgba(24, 24, 24, .34);
-    border: 2px solid @sol_2;
+    border: 3px solid @sol_2;
     font-size: 12pt;
     padding: @pre-padding;
     text-shadow: none;
@@ -174,13 +149,7 @@ article {
 
   & > img, & > p > img {
     max-width: 100%;
-    box-sizing: border-box;
-    padding: 1em;
-    border: 1px solid #dddddd;
-    background-color: #eeeeee;
-    box-shadow: inset 0 0 1em rgba(255, 255, 255, 0.4);
     display: block;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
   }
 }
