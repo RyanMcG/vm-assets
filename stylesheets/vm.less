@@ -11,10 +11,10 @@ html {
 }
 
 body {
-  .dark-colors(darken(@color, 10%));
+  background: @bg-color;
+  background: radial-gradient(circle, lighten(@bg-color, 5%), darken(@bg-color, 2%));
+  color: @color;
 }
-
-.dark-elements();
 
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
@@ -23,9 +23,6 @@ html, button, input, select, textarea,
 
 #content {
   overflow-y: hidden;
-  padding-bottom: 1em;
-  background: @bg-color;
-  background: radial-gradient(circle, lighten(@bg-color, 3%), darken(@bg-color, 10%)) fixed;
 }
 
 h1, h2, h3, h4 ,h5, h6, .tag-line, footer {
@@ -39,10 +36,6 @@ header, footer, article {
 
 article, footer .content {
   .content();
-}
-
-footer {
-  padding-top: 2em;
 }
 
 header {
@@ -78,15 +71,17 @@ h6 { font-size: 1.1em }
 #credit {
   text-align: center;
   font-size: .8em;
-  color: darken(@bg-color, 50%);
+  color: lighten(@color, 30%);
   text-shadow: none;
   margin: 0 auto;
-  padding: 7em 0 3em;
+  padding: 5em 0;
 }
 
 pre, code {
   font-family: monospace;
 }
+
+p > code { word-wrap: break-word; }
 
 @ul-padding: 2.8em;
 ul, ol {
@@ -111,19 +106,7 @@ p {
 }
 
 article {
-  color: @color;
-  text-shadow: 1px 1px 0 white;
-  a {
-    color: @link-color;
-    &:hover { color: lighten(@link-color, 5%); }
-    &:visited { color: @link-visited-color; }
-    &:active { color: darken(@link-color, 5%); }
-  }
-
-  h1, h2, h3, h4 ,h5, h6, .tag-line {
-    color: darken(@color, 10%);
-  }
-
+  .light-copy();
   @pre-padding: .4em;
   & > pre {
     border-radius: 3px;
