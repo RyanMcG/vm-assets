@@ -1,0 +1,30 @@
+.incise-generated-tag {
+  width: 1em;
+  margin-left: -1em;
+  display: block;
+  float: left;
+
+  &::after {
+    content: "#";
+    font-weight: 700;
+  }
+
+  text-decoration: none;
+
+  @color: #ccc;
+  color: @color;
+
+  &:link, &:visited {
+    color: @color;
+  }
+
+  &:hover, &:active {
+    color: darken(@color, 60%);
+  }
+}
+
+header, footer {
+  .incise-generated-tag {
+    display: none;
+  }
+}
