@@ -1,6 +1,6 @@
 .dark-colors(@color: @color) {
   background: @color;
-  background: radial-gradient(circle, lighten(@color, 5%), darken(@color, 2%));
+  background: @color no-repeat radial-gradient(circle, lighten(@color, 5%), darken(@color, 2%));
   color: @bg-color;
   text-shadow: 0.05em 0.05em 0 darken(@color, 5%);
 }
@@ -8,7 +8,6 @@
 
 .light-bg() {
   background: @bg-color;
-  background: radial-gradient(circle, lighten(@bg-color, 5%), darken(@bg-color, 2%));
   color: @color;
 }
 
